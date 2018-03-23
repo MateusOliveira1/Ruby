@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listar Escola</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Turma</th>
+      <th>Numerosala</th>
+      <th>Professor</th>
+      <th>Matricula</th>
+      <th>Turno</th>
+      <th>Escola</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @escolas.each do |escola| %>
+      <tr>
+        <td><%= escola.nome %></td>
+        <td><%= escola.turma %></td>
+        <td><%= escola.numeroSala %></td>
+        <td><%= escola.professor %></td>
+        <td><%= escola.matricula %></td>
+        <td><%= escola.turno %></td>
+        <td><%= escola.escola %></td>
+        <td><%= link_to 'Show', escola %></td>
+        <td><%= link_to 'Edit', edit_escola_path(escola) %></td>
+        <td><%= link_to 'Destroy', escola, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Escola', new_escola_path %>
